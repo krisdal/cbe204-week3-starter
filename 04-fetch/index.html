@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Directory</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Student Directory</h1>
+        <p class="subtitle">Cybersecurity Engineering Program</p>
+      </header>
+
+      <div class="search-section">
+        <label for="search-input">Search Students by Name or Email:</label>
+        <div class="search-box">
+          <input
+            type="text"
+            id="search-input"
+            placeholder="Enter student name or email..."
+            autocomplete="off"
+          />
+          <button id="search-btn">Search</button>
+        </div>
+        <div class="results-info">
+          <span id="results-count"></span>
+        </div>
+      </div>
+
+      <div id="error-container"></div>
+      <div id="loading" class="loading">Loading student data...</div>
+      <div id="students-container" class="students-list"></div>
+      <div id="no-results" class="no-results" style="display: none">
+        No students found matching your search.
+      </div>
+    </div>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

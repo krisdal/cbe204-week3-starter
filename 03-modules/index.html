@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Student Information Display</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Student Information System</h1>
+        <p class="subtitle">Cybersecurity Engineering Program</p>
+      </header>
+
+      <div id="stats-container"></div>
+
+      <div class="selector-section">
+        <label for="student-select">Select a Student:</label>
+        <select id="student-select">
+          <option value="">-- View All Students --</option>
+        </select>
+      </div>
+
+      <div id="students-container" class="students-grid"></div>
+    </div>
+
+    <!-- Load JavaScript modules  -->
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Security Finding Explorer</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="header">
+      <h1>🔒 Security Finding Explorer</h1>
+      <p>Browse and filter security findings from infrastructure scans</p>
+    </div>
+
+    <div class="container">
+      <div class="controls">
+        <div class="control-group">
+          <label for="severity-filter">Filter by Severity:</label>
+          <select id="severity-filter">
+            <option value="">All Severities</option>
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="type-filter">Filter by Type:</label>
+          <select id="type-filter">
+            <option value="">All Types</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="confidence-filter">Filter by Confidence:</label>
+          <select id="confidence-filter">
+            <option value="">All Confidence Levels</option>
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="status-filter">Filter by Status:</label>
+          <select id="status-filter">
+            <option value="">All Statuses</option>
+            <option value="open">Open</option>
+            <option value="resolved">Resolved</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="stats" id="stats-container"></div>
+
+      <div id="error-container"></div>
+      <div id="loading" class="loading">Loading findings...</div>
+      <div
+        id="findings-container"
+        class="findings-container"
+        style="display: none"
+      ></div>
+      <div id="no-findings" class="no-findings" style="display: none">
+        No findings match your filter criteria.
+      </div>
+    </div>
+
+    <script src="js/explorer.js"></script>
+  </body>
+</html>
