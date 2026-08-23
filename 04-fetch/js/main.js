@@ -95,13 +95,7 @@ function updateResultsCount(displayed, total) {
 function searchStudents() {
     const searchInput = document.getElementById('search-input');
     const searchTerm = searchInput.value.toLowerCase().trim();
-
-    if (!searchTerm) {
-        // If search term is empty, show all students
-        displayStudents(allStudents);
-        updateResultsCount(allStudents.length, allStudents.length);
-        return;
-    }
+    const selectedYear = document.getElementById('year-filter').value;
 
     // Use filter() to find matching students
     const filteredStudents = allStudents.filter(student => {
@@ -119,8 +113,10 @@ function searchStudents() {
             interest.toLowerCase().includes(searchTerm)
         );
 
-        // Return true if any of the fields match
-        return nameMatch || emailMatch || programMatch || interestsMatch;
+        const yearMatch = !selectedYear || student.year === Number(selectedYear);
+
+        // Return true if the search and year filters match
+        return (!searchTerm || nameMatch || emailMatch || programMatch || interestsMatch) && yearMatch;
     });
 
     displayStudents(filteredStudents);
@@ -135,6 +131,10 @@ document.addEventListener('DOMContentLoaded', function () {
     // Search button click handler
     const searchBtn = document.getElementById('search-btn');
     searchBtn.addEventListener('click', searchStudents);
+
+    // Year filter button click handler
+    const yearFilterBtn = document.getElementById('year-filter-btn');
+    yearFilterBtn.addEventListener('click', searchStudents);
 
     // Allow Enter key to trigger search
     const searchInput = document.getElementById('search-input');
