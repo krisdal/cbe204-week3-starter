@@ -45,6 +45,9 @@ function displayStudents(students) {
     container.style.display = 'grid';
     noResults.style.display = 'none';
 
+    // Modify this code to such that For each student card, make sure to display
+    // program, year, age, email, interests
+
     container.innerHTML = students.map(student => `
         <div class="student-item">
             <div class="student-header">
@@ -55,22 +58,6 @@ function displayStudents(students) {
                 <div class="info-row">
                     <span class="info-label">Program:</span>
                     <span class="info-value">${student.program}</span>
-                </div>
-                <div class="info-row">
-                    <span class="info-label">Year:</span>
-                    <span class="info-value">${student.year}</span>
-                </div>
-                <div class="info-row">
-                    <span class="info-label">Age:</span>
-                    <span class="info-value">${student.age}</span>
-                </div>
-                <div class="info-row">
-                    <span class="info-label">GPA:</span>
-                    <span class="info-value">${student.gpa}</span>
-                </div>
-                <div class="info-row">
-                    <span class="info-label">Email:</span>
-                    <span class="info-value">${student.contact.email}</span>
                 </div>
                 <div class="info-row">
                     <span class="info-label">Interests:</span>
